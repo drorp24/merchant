@@ -4,7 +4,13 @@ import { orange600, cyan600, purple600 } from 'material-ui/styles/colors';
 
 const data = {
   menus: [
-    { id: 'dashboard', text: 'DashBoard', icon: <FontIcon className="material-icons">assessment</FontIcon>, url: '/', index: 0 },
+    { id: 'dashboard', text: 'Dashboard', icon: <FontIcon className="material-icons">assessment</FontIcon>, url: '/', index: 0 },
+    { id: 'dashboard', text: 'Customers', icon: <FontIcon className="material-icons">face</FontIcon>, url: '/', index: 1 },
+    { id: 'dashboard', text: 'Orders', icon: <FontIcon className="material-icons">assignment</FontIcon>, url: '/', index: 2 },
+    { id: 'dashboard', text: 'Liquidity', icon: <FontIcon className="material-icons">local_atm</FontIcon>, url: '/', index: 3 },
+    { id: 'dashboard', text: 'Settings', icon: <FontIcon className="material-icons">settings</FontIcon>, url: '/', index: 4 },
+
+
     { id: 'api-demo-page', text: 'API Demo', icon: <FontIcon className="material-icons">http</FontIcon>, url: '/apiDemo', index: 1 },
     { id: 'grid-system-page', text: 'Grid System', icon: <FontIcon className="material-icons">view_quilt</FontIcon>, url: '/gridSystem', index: 2 },
     { id: 'icons-page', text: 'Icons', icon: <FontIcon className="material-icons">adjust</FontIcon>, url: '/icons', index: 3 },
@@ -36,6 +42,7 @@ const data = {
     { id: 'form-page', text: 'Form Page', icon: <FontIcon className="material-icons">web_asset</FontIcon>, url: '/form', index: 17 },
     { id: 'table-page', text: 'Table Page', icon: <FontIcon className="material-icons">grid_on</FontIcon>, url: '/table', index: 18 },
     { id: 'public-page', text: 'Public Page', icon: <FontIcon className="material-icons">language</FontIcon>, url: '/public-page', index: 19 },
+
   ],
   tablePage: {
     items: [
@@ -73,9 +80,9 @@ const data = {
       { name: 'Jun', 'New Orders': 7890 },
     ],
     browserUsage: [
-      { name: 'Chrome', value: 1200, color: orange600, icon: <FontIcon className="material-icons">chevron_right</FontIcon> },
-      { name: 'Firefox', value: 700, color: purple600, icon: <FontIcon className="material-icons">chevron_right</FontIcon> },
-      { name: 'Safari', value: 150, color: cyan600, icon: <FontIcon className="material-icons">chevron_right</FontIcon> },
+      { name: 'Bitcoin', value: 1200, color: orange600, icon: <FontIcon className="material-icons">chevron_right</FontIcon> },
+      { name: 'Ethereum', value: 700, color: purple600, icon: <FontIcon className="material-icons">chevron_right</FontIcon> },
+      { name: 'Litecoin', value: 150, color: cyan600, icon: <FontIcon className="material-icons">chevron_right</FontIcon> },
     ],
   },
 };

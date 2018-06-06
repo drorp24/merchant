@@ -1,8 +1,15 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable indent */
+/* eslint-disable react/jsx-indent */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { ListItem } from 'material-ui/List';
+import Badge from 'material-ui/Badge';
 import { createStructuredSelector } from 'reselect';
 import * as appActions from '../../../containers/App/actions';
 import SelectableList from '../../SelectableList';

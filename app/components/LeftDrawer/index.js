@@ -126,7 +126,7 @@ class LeftDrawer extends React.Component {
         open={navDrawerOpen}
       >
         <div style={styles.logo}>
-          Fortress Admin
+          {this.props.appStore.user.shopName}
         </div>
         <div style={styles.avatar.div}>
           <Avatar

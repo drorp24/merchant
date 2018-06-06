@@ -65,6 +65,7 @@ class PageBase extends React.Component {
 
           </Paper>
         )}
+        <p>Powered by Crymbo</p>
       </div>
     );
   }

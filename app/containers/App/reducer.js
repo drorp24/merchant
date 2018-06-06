@@ -5,7 +5,8 @@ const initialState = fromJS({
   user: {
     name: 'John Smith',
     email: 'demo@test.com',
-    imgUrl: 'http://www.material-ui.com/images/ok-128.jpg',
+    imgUrl: 'https://en.gravatar.com/userimage/26239719/c5d7f89ae3618b01b5c9fe6c09a8aa3f.jpeg',
+    shopName: 'The Money Shop',
   },
   authenticationErrorMessage: '',
   registrationErrorMessage: '',
@@ -47,7 +48,7 @@ function setBodyBackground(currentTheme) {
       break;
   }
 }
-
+/* eslint-disable indent */
 function appReducer(state = initialState, action) {
   switch (action.type) {
     case ActionTypes.CHANGE_LAYOUT:
@@ -285,6 +286,6 @@ function appReducer(state = initialState, action) {
     default:
       return state;
   }
-}
+/* eslint-disable indent */ }
 
 export default appReducer;
