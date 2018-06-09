@@ -16,6 +16,24 @@ import SelectableList from '../../SelectableList';
 import { makeSelectGlobal } from '../../../containers/App/selectors';
 import { findParentMenuItem } from '../menuUtils';
 
+const BadgedListItem = (props) => (
+  <div>
+    <ListItem {...props} />
+    <Badge
+      badgeContent={4}
+      color="primary"
+      style={{
+        position: 'relative',
+        left: '75%',
+        bottom: '35px',
+      }}
+      classes={{
+        colorPrimary: { background: '#000' },
+      }}
+    />
+  </div>
+);
+
 class MenuItems extends React.Component {
   constructor(props) {
     super(props);
@@ -26,20 +44,34 @@ class MenuItems extends React.Component {
     };
 
     this.menuLoaded = false;
-    this.handleMenusNestedListToggle = this.handleMenusNestedListToggle.bind(this);
-    this.handleMenuItemsNestedListToggle = this.handleMenuItemsNestedListToggle.bind(this);
+    this.handleMenusNestedListToggle = this.handleMenusNestedListToggle.bind(
+      this
+    );
+    this.handleMenuItemsNestedListToggle = this.handleMenuItemsNestedListToggle.bind(
+      this
+    );
     this.animateMenu = this.animateMenu.bind(this);
     this.setMenuItemFocus = this.setMenuItemFocus.bind(this);
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.appStore.selectedMenuIndex !== this.props.appStore.selectedMenuIndex) {
-      this.selectableMenuList.setSelectedIndex(newProps.appStore.selectedMenuIndex);
+    if (
+      newProps.appStore.selectedMenuIndex !==
+      this.props.appStore.selectedMenuIndex
+    ) {
+      this.selectableMenuList.setSelectedIndex(
+        newProps.appStore.selectedMenuIndex
+      );
     }
 
-    if ((newProps.appStore.menus.length > 0
-      && newProps.appStore.menus.length === this.props.appStore.menus.length && !this.menuLoaded)
-      || (this.menuLoaded && newProps.appStore.selectedMenuItem !== this.props.appStore.selectedMenuItem)) {
+    if (
+      (newProps.appStore.menus.length > 0 &&
+        newProps.appStore.menus.length === this.props.appStore.menus.length &&
+        !this.menuLoaded) ||
+      (this.menuLoaded &&
+        newProps.appStore.selectedMenuItem !==
+          this.props.appStore.selectedMenuItem)
+    ) {
       this.menuLoaded = true;
       this.setMenuItemFocus(newProps.appStore.selectedMenuItem);
     }
@@ -72,7 +104,7 @@ class MenuItems extends React.Component {
     this.setState({
       menusHasItems: item.state.open,
     });
-  }
+  };
 
   handleMenuItemsNestedListToggle = (item) => {
     if (!this.state.isMobileBrowser) {
@@ -88,20 +120,27 @@ class MenuItems extends React.Component {
         }, 0);
       }
     }
-  }
+  };
 
   animateMenu(menu, child) {
     let className = ' hide';
 
-    if ((menu.open && child.animating && !menu.willCloseMenu) ||
-    this.state.isMobileBrowser) {
+    if (
+      (menu.open && child.animating && !menu.willCloseMenu) ||
+      this.state.isMobileBrowser
+    ) {
       className = '';
     }
     return className;
   }
 
   render() {
-    const { styles, isMobileBrowser, animateRootMenu, handleClickMenu } = this.props;
+    const {
+      styles,
+      isMobileBrowser,
+      animateRootMenu,
+      handleClickMenu,
+    } = this.props;
 
     return (
       <SelectableList
@@ -112,52 +151,73 @@ class MenuItems extends React.Component {
           this.selectableMenuList = selectableList;
         }}
       >
-        {
-          this.props.appStore.menus.length > 0 ? (
-            <ListItem
-              value={-1}
-              className="menu-text-color"
-              primaryText="MENU"
-              style={styles.headerItem}
-              open={this.state.menusHasItems}
-              onNestedListToggle={this.handleMenusNestedListToggle}
-              primaryTogglesNestedList
-              nestedItems={this.props.appStore.menus.length > 0 ?
-                this.props.appStore.menus.map((menu) =>
-                  <ListItem
-                    ref={(listItem) => {
-                      this[menu.id] = listItem;
-                    }}
-                    className={`list-item${animateRootMenu({ open: this.state.menusHasItems }, menu)}`}
-                    value={menu.index}
-                    style={this.props.appStore.selectedMenuIndex === menu.index ? styles.selectedMenuListItem : styles.menuItem}
-                    primaryText={menu.text}
-                    leftIcon={menu.icon}
-                    primaryTogglesNestedList={menu.children && menu.children.length > 0}
-                    onClick={() => handleClickMenu(menu)}
-                    onNestedListToggle={this.handleMenuItemsNestedListToggle}
-                    open={menu.open}
-                    data-id={menu.id}
-                    data-url={menu.url}
-                    nestedItems={menu.children && menu.children.length > 0 ?
-                      menu.children.map((child) =>
-                        <ListItem
-                          className={`list-item${this.animateMenu(menu, child)}`}
-                          value={child.index}
-                          style={this.props.appStore.selectedMenuIndex === child.index ? styles.selectedMenuListItem : styles.menuItem}
-                          primaryText={child.text}
-                          onClick={() => handleClickMenu(child)}
-                          data-id={child.id}
-                          data-url={child.url}
-                        />
-                      ) : []}
-                  />
-                ) : []}
-            />
-          ) : (
-            <span style={styles.loading}>Loading...</span>
-          )
-        }
+        {this.props.appStore.menus.length > 0 ? (
+          <ListItem
+            value={-1}
+            className="menu-text-color"
+            primaryText="MENU"
+            style={styles.headerItem}
+            open={this.state.menusHasItems}
+            onNestedListToggle={this.handleMenusNestedListToggle}
+            primaryTogglesNestedList
+            nestedItems={
+              this.props.appStore.menus.length > 0
+                ? this.props.appStore.menus.map((menu) => (
+                    <BadgedListItem
+                      ref={(listItem) => {
+                        this[menu.id] = listItem;
+                      }}
+                      className={`list-item${animateRootMenu(
+                        { open: this.state.menusHasItems },
+                        menu
+                      )}`}
+                      value={menu.index}
+                      style={
+                        this.props.appStore.selectedMenuIndex === menu.index
+                          ? styles.selectedMenuListItem
+                          : styles.menuItem
+                      }
+                      primaryText={menu.text}
+                      leftIcon={menu.icon}
+                      primaryTogglesNestedList={
+                        menu.children && menu.children.length > 0
+                      }
+                      onClick={() => handleClickMenu(menu)}
+                      onNestedListToggle={this.handleMenuItemsNestedListToggle}
+                      open={menu.open}
+                      data-id={menu.id}
+                      data-url={menu.url}
+                      nestedItems={
+                        menu.children && menu.children.length > 0
+                          ? menu.children.map((child) => (
+                              <ListItem
+                                className={`list-item${this.animateMenu(
+                                  menu,
+                                  child
+                                )}`}
+                                value={child.index}
+                                style={
+                                  this.props.appStore.selectedMenuIndex ===
+                                  child.index
+                                    ? styles.selectedMenuListItem
+                                    : styles.menuItem
+                                }
+                                primaryText={child.text}
+                                onClick={() => handleClickMenu(child)}
+                                data-id={child.id}
+                                data-url={child.url}
+                              />
+                            ))
+                          : []
+                      }
+                    />
+                  ))
+                : []
+            }
+          />
+        ) : (
+          <span style={styles.loading}>Loading...</span>
+        )}
       </SelectableList>
     );
   }
@@ -182,4 +242,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MenuItems);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MenuItems);

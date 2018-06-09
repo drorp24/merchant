@@ -36,7 +36,7 @@ class DashboardPage extends React.Component {
               Icon={'thumb_up'}
               color={cyan600}
               iconColor={cyan500}
-              title="Likes"
+              title="Deals"
               value="7051"
             />
           </div>
