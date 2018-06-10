@@ -33,8 +33,317 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
-    },
-    {
+    }, {
+      path: 'apiDemo',
+      name: 'apiDemoPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/ApidemoPage/reducer'),
+          System.import('containers/ComponentDemos/ApidemoPage/sagas'),
+          System.import('containers/ComponentDemos/ApidemoPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([reducer, sagas, component]) => {
+          injectReducer('apidemo', reducer.default);
+          injectSagas(sagas.default);
+
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'gridSystem',
+      name: 'gridSystemPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/GridSystemPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'imageGallery',
+      name: 'imageGalleryPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/PhotoImage/ImageGalleryPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'autoComplete',
+      name: 'autoCompletePage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/FormElements/AutoCompletePage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'buttons',
+      name: 'buttonsPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/FormElements/ButtonsPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'card',
+      name: 'cardPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/CardPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'icons',
+      name: 'iconsPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/IconsPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'dialog',
+      name: 'dialogPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/DialogPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'datePicker',
+      name: 'datePickerPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/FormElements/DatePickerPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'textField',
+      name: 'textFieldPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/FormElements/TextFieldPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'timePicker',
+      name: 'timePickerPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/FormElements/TimePickerPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'select',
+      name: 'selectPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/FormElements/SelectPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'switches',
+      name: 'switchesPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/FormElements/SwitchesPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'lineChart',
+      name: 'lineChartPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/Charts/LineChartPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'barChart',
+      name: 'barChartPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/Charts/BarChartPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'pieChart',
+      name: 'pieChartPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/Charts/PieChartPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'form',
+      name: 'formPage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/FormPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'table',
+      name: 'tablePage',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/TablePage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
+      path: 'public-page',
+      name: 'publicPage',
+      type: 'public',
+      getComponent(nextState, cb) {
+        const importModules = Promise.all([
+          System.import('containers/ComponentDemos/PublicPage'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+          renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
+      },
+    }, {
       path: '*',
       name: 'notfound',
       getComponent(nextState, cb) {
