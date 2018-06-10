@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
-import Divider from '@material-ui/core/Divider';
-import RefreshIndicator from '@material-ui/core/RefreshIndicator';
+import Paper from 'material-ui/Paper';
+import Divider from 'material-ui/Divider';
+import RefreshIndicator from 'material-ui/RefreshIndicator';
 import globalStyles from '../../styles';
 
 class PageBase extends React.Component {

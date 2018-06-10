@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
-import { white, cyan500, cyan600 } from '@material-ui/core/colors';
+import Paper from 'material-ui/Paper';
+import { white, cyan500, cyan600 } from 'material-ui/styles/colors';
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, CartesianGrid } from 'recharts';
 import GlobalStyles from '../../../styles';
 

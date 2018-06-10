@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
+import Paper from 'material-ui/Paper';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import Avatar from '@material-ui/core/Avatar';
-import List from '@material-ui/core/List/List';
-import ListItem from '@material-ui/core/List/ListItem';
+import Avatar from 'material-ui/Avatar';
+import List from 'material-ui/List/List';
+import ListItem from 'material-ui/List/ListItem';
 import GlobalStyles from '../../../styles';
 
 const BrowserUsage = (props) => {

@@ -4,7 +4,7 @@
 */
 
 import React from 'react';
-import DatePicker from '@material-ui/core/DatePicker';
+import DatePicker from 'material-ui/DatePicker';
 import PageBase from '../../../../components/PageBase';
 
 const styles = {

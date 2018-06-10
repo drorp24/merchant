@@ -5,8 +5,8 @@
 */
 
 import React from 'react';
-import Divider from '@material-ui/core/Divider';
-import Icon from '@material-ui/core/Icon';
+import Divider from 'material-ui/Divider';
+import FontIcon from 'material-ui/FontIcon';
 import PageBase from '../../../components/PageBase';
 import actionIcons from './MaterialIcons/Action';
 import alertIcons from './MaterialIcons/Alert';

@@ -1,6 +1,6 @@
-import spacing from '@material-ui/core/styles/spacing';
-import typography from '@material-ui/core/Typography';
-import { grey500, white, red500 } from '@material-ui/core/colors';
+import spacing from 'material-ui/styles/spacing';
+import typography from 'material-ui/styles/typography';
+import { grey500, white, red500 } from 'material-ui/styles/colors';
 
 const styles = {
   boxContainer: {

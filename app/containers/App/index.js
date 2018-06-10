@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import withWidth, { LARGE } from '@material-ui/core/withWidth';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import withWidth, { LARGE } from 'material-ui/utils/withWidth';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
@@ -25,11 +25,7 @@ class App extends React.Component {
 
     let isMobileBrowser = false;
 
-    if (
-      /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    ) {
+    if (/Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
       isMobileBrowser = true;
     }
 
@@ -40,9 +36,7 @@ class App extends React.Component {
       isMobileBrowser,
     };
 
-    this.handleChangeRequestNavDrawer = this.handleChangeRequestNavDrawer.bind(
-      this
-    );
+    this.handleChangeRequestNavDrawer = this.handleChangeRequestNavDrawer.bind(this);
     this.renderPages = this.renderPages.bind(this);
   }
 
@@ -66,11 +60,7 @@ class App extends React.Component {
     if (nextRoute !== currentRoute) {
       let url = nextRoute.path;
       url = (url.indexOf('/') > -1 ? '' : '/') + url;
-      const { foundMenuItem } = findMenuItem(
-        this.props.appStore.menus,
-        'url',
-        url
-      );
+      const { foundMenuItem } = findMenuItem(this.props.appStore.menus, 'url', url);
 
       if (foundMenuItem) {
         // Select menu item
@@ -112,66 +102,53 @@ class App extends React.Component {
     const currentRoute = this.props.routes[this.props.routes.length - 1];
 
     if (currentRoute.type === 'public') {
-      return (
-        <div>
-          {React.cloneElement(this.props.children, {
-            key: path,
-          })}
-        </div>
-      );
+      return (<div>
+        {React.cloneElement(this.props.children, {
+          key: path,
+        })}
+      </div>);
     } else if (this.props.appStore.userIsAuthenticated) {
-      return (
-        <div
-          className={
-            this.props.appStore.currentTheme +
-            (this.props.appStore.isBoxedLayout
-              ? ' layout-boxed'
-              : ' layout-fluid')
-          }
-        >
-          <Header
-            styles={styles.header}
-            handleChangeRequestNavDrawer={this.handleChangeRequestNavDrawer}
-          />
+      return (<div className={this.props.appStore.currentTheme + (this.props.appStore.isBoxedLayout ? ' layout-boxed' : ' layout-fluid')}>
+        <Header
+          styles={styles.header}
+          handleChangeRequestNavDrawer={this.handleChangeRequestNavDrawer}
+        />
 
-          <LeftDrawer
-            navDrawerOpen={navDrawerOpen}
-            location={this.props.location}
-            isMobileBrowser={this.state.isMobileBrowser}
-            currentRoute={currentRoute}
-          />
+        <LeftDrawer
+          navDrawerOpen={navDrawerOpen}
+          location={this.props.location}
+          isMobileBrowser={this.state.isMobileBrowser}
+          currentRoute={currentRoute}
+        />
 
-          <div className="main-container" style={styles.container}>
-            <ReactCSSTransitionGroup
-              transitionName="transition-animation"
-              transitionAppear
-              transitionAppearTimeout={1500}
-              transitionEnterTimeout={0}
-              transitionLeave={false}
-            >
-              {React.cloneElement(this.props.children, {
-                key: path,
-              })}
-            </ReactCSSTransitionGroup>
-          </div>
-
-          <Settings
-            styles={styles}
-            location={this.props.location}
-            isMobileBrowser={this.state.isMobileBrowser}
-          />
+        <div className="main-container" style={styles.container}>
+          <ReactCSSTransitionGroup
+            transitionName="transition-animation"
+            transitionAppear
+            transitionAppearTimeout={1500}
+            transitionEnterTimeout={0}
+            transitionLeave={false}
+          >
+            {React.cloneElement(this.props.children, {
+              key: path,
+            })}
+          </ReactCSSTransitionGroup>
         </div>
-      );
+
+        <Settings
+          styles={styles}
+          location={this.props.location}
+          isMobileBrowser={this.state.isMobileBrowser}
+        ></Settings>
+      </div>);
     }
-    return <Auth />;
+    return (<Auth />);
   }
 
   render() {
     return (
-      <MuiThemeProvider
-        muiTheme={getCurrentTheme(this.props.appStore.currentTheme)}
-      >
-        {this.renderPages()}
+      <MuiThemeProvider muiTheme={getCurrentTheme(this.props.appStore.currentTheme)}>
+        { this.renderPages() }
       </MuiThemeProvider>
     );
   }
@@ -196,7 +173,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withWidth()(App));
+export default connect(mapStateToProps, mapDispatchToProps)(withWidth()(App));

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
-import RaisedButton from '@material-ui/core/RaisedButton';
-import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
-import SelectField from '@material-ui/core/SelectField';
-import Toggle from '@material-ui/core/Toggle';
-import DatePicker from '@material-ui/core/DatePicker';
-import { grey400 } from '@material-ui/core/colors';
-import Divider from '@material-ui/core/Divider';
+import RaisedButton from 'material-ui/RaisedButton';
+import MenuItem from 'material-ui/MenuItem';
+import TextField from 'material-ui/TextField';
+import SelectField from 'material-ui/SelectField';
+import Toggle from 'material-ui/Toggle';
+import DatePicker from 'material-ui/DatePicker';
+import { grey400 } from 'material-ui/styles/colors';
+import Divider from 'material-ui/Divider';
 import PageBase from '../../../components/PageBase';
 
 class FormPage extends React.Component {

@@ -4,7 +4,7 @@
 */
 
 import React from 'react';
-import { white, blue500, grey200 } from '@material-ui/core/colors';
+import { white, blue500, grey200 } from 'material-ui/styles/colors';
 import PageBase from '../../../components/PageBase';
 
 const styles = {

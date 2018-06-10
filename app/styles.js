@@ -1,5 +1,5 @@
-import typography from '@material-ui/core/Typography';
-import { grey600 } from '@material-ui/core/colors';
+import typography from 'material-ui/styles/typography';
+import { grey600 } from 'material-ui/styles/colors';
 
 const styles = {
   navigation: {

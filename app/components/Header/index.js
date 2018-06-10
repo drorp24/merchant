@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import AppBar from 'material-ui/AppBar';
+import IconButton from 'material-ui/IconButton';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
 import { createStructuredSelector } from 'reselect';
-import Icon from '@material-ui/core/Icon';
+import FontIcon from 'material-ui/FontIcon';
 import * as appActions from '../../containers/App/actions';
 import { makeSelectGlobal } from '../../containers/App/selectors';
 import Theme from '../../config/theme';
@@ -58,21 +58,22 @@ class Header extends React.Component {
           style={{ ...styles, ...style.appBar }}
           title={
             <div>
-              {this.props.appStore.showTabs ? <TabNav style={style} /> : null}
+              {
+                this.props.appStore.showTabs ? (
+                  <TabNav
+                    style={style}
+                  ></TabNav>
+                ) : null
+              }
             </div>
-          }
+        }
           iconElementLeft={
             <IconButton
               iconStyle={style.iconButton}
               style={style.menuButton}
               onClick={handleChangeRequestNavDrawer}
             >
-              <Icon
-                color={this.state.currentTheme.appBarMenuButtonColor}
-                className="material-icons"
-              >
-                menu
-              </Icon>
+              <FontIcon color={this.state.currentTheme.appBarMenuButtonColor} className="material-icons">menu</FontIcon>
             </IconButton>
           }
           iconElementRight={
@@ -81,24 +82,14 @@ class Header extends React.Component {
                 iconStyle={style.iconButton}
                 onClick={this.openSettingsDrawer}
               >
-                <Icon
-                  color={this.state.currentTheme.appBarMenuButtonColor}
-                  className="material-icons"
-                >
-                  settings
-                </Icon>
+                <FontIcon color={this.state.currentTheme.appBarMenuButtonColor} className="material-icons">settings</FontIcon>
               </IconButton>
-              <Menu
+              <IconMenu
                 className="header-apps"
                 color={this.state.currentTheme.appBarMenuButtonColor}
                 iconButtonElement={
                   <IconButton>
-                    <Icon
-                      color={this.state.currentTheme.appBarMenuButtonColor}
-                      className="material-icons"
-                    >
-                      view_module
-                    </Icon>
+                    <FontIcon color={this.state.currentTheme.appBarMenuButtonColor} className="material-icons">view_module</FontIcon>
                   </IconButton>
                 }
                 targetOrigin={{ horizontal: 'right', vertical: 'top' }}
@@ -107,26 +98,24 @@ class Header extends React.Component {
                 <MenuItem key={1} primaryText="Application 1" />
                 <MenuItem key={2} primaryText="Application 2" />
                 <MenuItem key={3} primaryText="Application 3" />
-              </Menu>
-              <Menu
+              </IconMenu>
+              <IconMenu
                 color={this.state.currentTheme.appBarMenuButtonColor}
                 iconButtonElement={
                   <IconButton>
-                    <Icon
-                      color={this.state.currentTheme.appBarMenuButtonColor}
-                      className="material-icons"
-                    >
-                      more_vert_icon
-                    </Icon>
+                    <FontIcon color={this.state.currentTheme.appBarMenuButtonColor} className="material-icons">more_vert_icon</FontIcon>
                   </IconButton>
                 }
                 targetOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'top' }}
               >
-                <MenuItem primaryText="Sign out" onClick={this.signOut} />
-              </Menu>
+                <MenuItem
+                  primaryText="Sign out"
+                  onClick={this.signOut}
+                />
+              </IconMenu>
             </div>
-          }
+        }
         />
       </div>
     );
@@ -150,7 +139,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
