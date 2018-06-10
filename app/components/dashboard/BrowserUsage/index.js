@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List/List';
-import ListItem from '@material-ui/core/List/ListItem';
+import ListItem from '@material-ui/core/ListItem';
 import GlobalStyles from '../../../styles';
 
 const BrowserUsage = (props) => {

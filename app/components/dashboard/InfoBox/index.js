@@ -5,7 +5,8 @@ import Icon from '@material-ui/core/Icon';
 import { white } from '@material-ui/core/colors';
 import typography from '@material-ui/core/Typography';
 
-class InfoBox extends React.Component { // eslint-disable-line react/prefer-stateless-function
+class InfoBox extends React.Component {
+  // eslint-disable-line react/prefer-stateless-function
   render() {
     const { color, title, value, Icon, iconColor } = this.props;
 
@@ -57,9 +58,13 @@ class InfoBox extends React.Component { // eslint-disable-line react/prefer-stat
     return (
       <Paper style={styles.container}>
         <span style={styles.iconSpan}>
-          <FontIcon color={iconColor} style={styles.icon} className="material-icons">
+          <Icon
+            color={iconColor}
+            style={styles.icon}
+            className="material-icons"
+          >
             {Icon}
-          </FontIcon>
+          </Icon>
         </span>
 
         <div style={styles.content}>

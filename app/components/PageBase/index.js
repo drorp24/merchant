@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import Divider from '@material-ui/core/Divider';
-import RefreshIndicator from '@material-ui/core/RefreshIndicator';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import globalStyles from '../../styles';
 
 class PageBase extends React.Component {
@@ -29,11 +29,9 @@ class PageBase extends React.Component {
         {
           this.state.loading ? (
             <div style={{ position: 'relative' }}>
-              <RefreshIndicator
+              <CircularProgress
                 size={40}
-                left={-20}
-                top={200}
-                status={'loading'}
+                variant="indeterminate"
                 style={{ marginLeft: '50%' }}
               />
             </div>
