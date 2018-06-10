@@ -14,7 +14,7 @@ import Auth from '../Auth';
 import Theme from '../../config/theme';
 import Styles from './styles';
 import Settings from '../../components/Settings';
-import { updateContentDimensions, getCurrentTheme } from './appUtils';
+import { updateContentDimensions } from './appUtils';
 import { findMenuItem } from '../../components/LeftDrawer/menuUtils';
 
 const theme = new Theme();
@@ -168,9 +168,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <MuiThemeProvider
-        muiTheme={getCurrentTheme(this.props.appStore.currentTheme)}
-      >
+      <MuiThemeProvider>
         {this.renderPages()}
       </MuiThemeProvider>
     );
@@ -179,7 +177,7 @@ class App extends React.Component {
 
 App.propTypes = {
   children: PropTypes.element,
-  width: PropTypes.number,
+  width: PropTypes.string,
   location: PropTypes.object,
   routes: PropTypes.any,
   appStore: PropTypes.any,
