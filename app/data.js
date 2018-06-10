@@ -39,40 +39,6 @@ const data = {
       url: '/',
       index: 4,
     },
-
-    /*
-    { id: 'api-demo-page', text: 'API Demo', icon: <Icon className="material-icons">http</Icon>, url: '/apiDemo', index: 1 },
-    { id: 'grid-system-page', text: 'Grid System', icon: <Icon className="material-icons">view_quilt</Icon>, url: '/gridSystem', index: 2 },
-    { id: 'icons-page', text: 'Icons', icon: <Icon className="material-icons">adjust</Icon>, url: '/icons', index: 3 },
-    { id: 'image-gallery-page', text: 'Image Gallery', icon: <Icon className="material-icons">collections</Icon>, url: '/imageGallery', index: 4 },
-    { id: 'form-elements-page',
-      text: 'Form Elements',
-      icon: <Icon className="material-icons">web</Icon>,
-      children: [
-        { id: 'auto-complete-page', text: 'Auto Complete', url: '/autoComplete', index: 5 },
-        { id: 'buttons-page', text: 'Buttons', url: '/buttons', index: 6 },
-        { id: 'date-picker-page', text: 'Date Picker', url: '/datePicker', index: 7 },
-        { id: 'select-page', text: 'Select', url: '/select', index: 8 },
-        { id: 'switches-page', text: 'Switches', url: '/switches', index: 9 },
-        { id: 'test-field-page', text: 'Text Field', url: '/textField', index: 10 },
-        { id: 'time-picker-page', text: 'Time Picker', url: '/timePicker', index: 11 },
-      ],
-    },
-    { id: 'chart-page',
-      text: 'Charts',
-      icon: <Icon className="material-icons">show_chart</Icon>,
-      children: [
-        { id: 'barchart-page', text: 'BarChart Page', url: '/barChart', index: 12 },
-        { id: 'linechart-page', text: 'LineChart Page', url: '/lineChart', index: 13 },
-        { id: 'piechart-page', text: 'PieChart Page', url: '/pieChart', index: 14 },
-      ],
-    },
-    { id: 'dialog-page', text: 'Dialog', icon: <Icon className="material-icons">call_to_action</Icon>, url: '/dialog', index: 15 },
-    { id: 'card-page', text: 'Card', icon: <Icon className="material-icons">note</Icon>, url: '/card', index: 16 },
-    { id: 'form-page', text: 'Form Page', icon: <Icon className="material-icons">web_asset</Icon>, url: '/form', index: 17 },
-    { id: 'table-page', text: 'Table Page', icon: <Icon className="material-icons">grid_on</Icon>, url: '/table', index: 18 },
-    { id: 'public-page', text: 'Public Page', icon: <Icon className="material-icons">language</Icon>, url: '/public-page', index: 19 },
-*/
   ],
   tablePage: {
     items: [
