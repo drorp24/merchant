@@ -1,26 +1,26 @@
-// import getMuiTheme from '@material-ui/core/styles/getMuiTheme';
-//
-// const themeDefault = getMuiTheme({
-//   palette: {
-//   },
-//   appBar: {
-//     height: 57,
-//     color: '#37474F',
-//   },
-//   drawer: {
-//     width: 230,
-//     color: '#263238',
-//   },
-//   raisedButton: {
-//     primaryColor: '#1E88E5',
-//   },
-//   tabs: {
-//     backgroundColor: '#37474F',
-//   },
-//   inkBar: {
-//     backgroundColor: '#1E88E5',
-//   },
-// });
-//
-//
-// export default themeDefault;
+import getMuiTheme from '@material-ui/core/styles/getMuiTheme';
+
+const themeDefault = getMuiTheme({
+  palette: {
+  },
+  appBar: {
+    height: 57,
+    color: '#37474F',
+  },
+  drawer: {
+    width: 230,
+    color: '#263238',
+  },
+  raisedButton: {
+    primaryColor: '#1E88E5',
+  },
+  tabs: {
+    backgroundColor: '#37474F',
+  },
+  inkBar: {
+    backgroundColor: '#1E88E5',
+  },
+});
+
+
+export default themeDefault;

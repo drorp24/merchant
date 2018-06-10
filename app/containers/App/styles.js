@@ -1,5 +1,5 @@
 import { grey100 } from '@material-ui/core/colors';
-import { SMALL } from '@material-ui/core/withWidth';
+import { SMALL } from '@material-ui/core/utils/withWidth';
 
 const paddingLeftDrawerOpen = 250;
 const styles = (currentTheme, width, navDrawerOpen) => ({

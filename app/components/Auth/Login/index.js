@@ -4,13 +4,12 @@ import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import { Link } from 'react-router';
-import RaisedButton from 'material-ui/RaisedButton';
+import RaisedButton from '@material-ui/core/RaisedButton';
 import FlatButton from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import styles from '../styles';
 
-class Login extends React.PureComponent {
-  // eslint-disable-line react/prefer-stateless-function
+class Login extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
       <div id="login-form">
@@ -19,15 +18,18 @@ class Login extends React.PureComponent {
             <div style={styles.logoContainer}>
               <img
                 style={{ width: 295, height: 54 }}
-                src="http://adminwebtemplates.com/logo.png"
-                alt="Fortress Admin Template"
+                src="http://adminwebtemplates.com/logo.png" alt="Fortress Admin Template"
               />
             </div>
-            {this.props.errorMessage ? (
-              <div>
-                <p style={styles.errorMessage}>* {this.props.errorMessage}</p>
-              </div>
-            ) : null}
+            {
+              this.props.errorMessage ? (
+                <div>
+                  <p style={styles.errorMessage}>
+                    * {this.props.errorMessage}
+                  </p>
+                </div>
+              ) : null
+            }
 
             <form>
               <TextField
@@ -62,6 +64,7 @@ class Login extends React.PureComponent {
                   style={styles.boxBtn}
                   onClick={this.props.onSignIn}
                 />
+
               </div>
             </form>
           </Paper>
@@ -71,13 +74,13 @@ class Login extends React.PureComponent {
               label="Forgot Password?"
               onClick={this.props.onForgotPassword}
               style={styles.flatButton}
-              icon={<Icon className="material-icons">help</Icon>}
+              icon={<FontIcon className="material-icons">help</FontIcon>}
             />
             <FlatButton
               label="Register"
               onClick={this.props.onRegister}
               style={styles.flatButton}
-              icon={<Icon className="material-icons">person_add</Icon>}
+              icon={<FontIcon className="material-icons">person_add</FontIcon>}
             />
           </div>
 
@@ -100,13 +103,9 @@ class Login extends React.PureComponent {
             </Link>
           </div>
           <p style={styles.instructions}>Try login with</p>
-          <p style={styles.instructions}>
-            email: demo@test.com | password: demo
-          </p>
+          <p style={styles.instructions}>email: demo@test.com | password: demo</p>
           <p style={styles.instructions}>Or</p>
-          <p style={styles.instructions}>
-            email: demo2@test.com | password: demo2
-          </p>
+          <p style={styles.instructions}>email: demo2@test.com | password: demo2</p>
         </div>
       </div>
     );

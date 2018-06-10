@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Icon from '@material-ui/core/Icon';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
+import Toggle from '@material-ui/core/Toggle';
 import { createStructuredSelector } from 'reselect';
 import * as appActions from '../../containers/App/actions';
 import { makeSelectGlobal } from '../../containers/App/selectors';
@@ -79,7 +80,7 @@ class Settings extends React.Component {
           style={styles.settingDrawer}
           iconElementLeft={
             <IconButton onClick={this.closeSettingsDrawer}>
-              <Icon className="material-icons">close</Icon>
+              <FontIcon className="material-icons">close</FontIcon>
             </IconButton>
           }
         />
