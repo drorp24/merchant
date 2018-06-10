@@ -7,12 +7,12 @@
 */
 
 import React from 'react';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import Divider from 'material-ui/Divider';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import FontIcon from 'material-ui/FontIcon';
-import IconButton from 'material-ui/IconButton';
+import FlatButton from '@material-ui/core/Button';
+import RaisedButton from '@material-ui/core/RaisedButton';
+import Divider from '@material-ui/core/Divider';
+import FloatingActionButton from '@material-ui/core/FloatingActionButton';
+import Icon from '@material-ui/core/Icon';
+import IconButton from '@material-ui/core/IconButton';
 import PageBase from '../../../../components/PageBase';
 
 const styles = {

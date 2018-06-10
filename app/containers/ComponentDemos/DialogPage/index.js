@@ -4,12 +4,13 @@
 */
 
 import React from 'react';
-import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import DatePicker from 'material-ui/DatePicker';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import { white, lime500 } from 'material-ui/styles/colors';
+import Dialog from '@material-ui/core/Dialog';
+import FlatButton from '@material-ui/core/Button';
+import RaisedButton from '@material-ui/core/RaisedButton';
+import DatePicker from '@material-ui/core/DatePicker';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import { white, lime500 } from '@material-ui/core/colors';
 import PageBase from '../../../components/PageBase';
 
 const styles = {
@@ -132,7 +133,11 @@ class DialogPage extends React.Component {
       >
         <div className="row" style={styles.container}>
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-md m-b-15">
-            <RaisedButton primary label="Dialog" onTouchTap={this.handleOpenExample1} />
+            <RaisedButton
+              primary
+              label="Dialog"
+              onTouchTap={this.handleOpenExample1}
+            />
             <Dialog
               title="Dialog With Actions"
               actions={actionsExample1}
@@ -140,13 +145,18 @@ class DialogPage extends React.Component {
               open={this.state.openExample1}
               onRequestClose={this.handleCloseExample1}
             >
-              The actions in this window were passed in as an array of React objects.
+              The actions in this window were passed in as an array of React
+              objects.
             </Dialog>
           </div>
         </div>
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-md m-b-15">
-            <RaisedButton secondary label="Scrollable Dialog" onTouchTap={this.handleOpenExample3} />
+            <RaisedButton
+              secondary
+              label="Scrollable Dialog"
+              onTouchTap={this.handleOpenExample3}
+            />
             <Dialog
               title="Scrollable Dialog"
               actions={actionsExample3}
@@ -163,7 +173,12 @@ class DialogPage extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-md m-b-15">
-            <RaisedButton labelColor={white} backgroundColor={lime500} label="Dialog With Date Picker" onTouchTap={this.handleOpenExample2} />
+            <RaisedButton
+              labelColor={white}
+              backgroundColor={lime500}
+              label="Dialog With Date Picker"
+              onTouchTap={this.handleOpenExample2}
+            />
             <Dialog
               title="Dialog With Date Picker"
               actions={actionsExample2}

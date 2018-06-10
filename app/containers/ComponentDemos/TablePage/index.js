@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import FontIcon from 'material-ui/FontIcon';
-import { pink500, grey200, grey500 } from 'material-ui/styles/colors';
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from '@material-ui/core/Table';
+import FloatingActionButton from '@material-ui/core/FloatingActionButton';
+import Icon from '@material-ui/core/Icon';
+import { pink500, grey200, grey500 } from '@material-ui/core/colors';
 import PageBase from '../../../components/PageBase';
 import Data from '../../../data';
 

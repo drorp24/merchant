@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { Link, browserHistory } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Tabs, Tab } from 'material-ui/Tabs';
+import { Tabs, Tab } from '@material-ui/core/Tabs';
 import { createStructuredSelector } from 'reselect';
 import * as appActions from '../../../containers/App/actions';
 import { makeSelectGlobal } from '../../../containers/App/selectors';

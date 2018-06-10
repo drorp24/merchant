@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Avatar from 'material-ui/Avatar';
-import { List, ListItem } from 'material-ui/List';
-import Subheader from 'material-ui/Subheader';
-import Divider from 'material-ui/Divider';
-import Paper from 'material-ui/Paper';
-import IconButton from 'material-ui/IconButton';
-import FontIcon from 'material-ui/FontIcon';
-import IconMenu from 'material-ui/IconMenu';
-import MenuItem from 'material-ui/MenuItem';
-import { grey400, cyan600, white } from 'material-ui/styles/colors';
-import typography from 'material-ui/styles/typography';
+import Avatar from '@material-ui/core/Avatar';
+import { List, ListItem } from '@material-ui/core/List';
+import Subheader from '@material-ui/core/Subheader';
+import Divider from '@material-ui/core/Divider';
+import Paper from '@material-ui/core/Paper';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
+import IconMenu from '@material-ui/core/IconMenu';
+import MenuItem from '@material-ui/core/MenuItem';
+import { grey400, cyan600, white } from '@material-ui/core/colors';
+import typography from '@material-ui/core/Typography';
 
 const RecentlyProducts = (props) => {
   const styles = {

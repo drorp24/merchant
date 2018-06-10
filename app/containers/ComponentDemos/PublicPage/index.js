@@ -4,7 +4,7 @@ import {
   Card,
   CardHeader,
   CardText,
-} from 'material-ui/Card';
+} from '@material-ui/core/Card';
 
 const styles = {
   container: {

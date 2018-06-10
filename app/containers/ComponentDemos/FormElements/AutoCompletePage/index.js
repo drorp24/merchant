@@ -4,8 +4,8 @@
 */
 
 import React from 'react';
-import AutoComplete from 'material-ui/AutoComplete';
-import MenuItem from 'material-ui/MenuItem';
+import AutoComplete from '@material-ui/core/AutoComplete';
+import MenuItem from '@material-ui/core/MenuItem';
 import PageBase from '../../../../components/PageBase';
 
 const styles = {

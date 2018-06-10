@@ -2,12 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Drawer from 'material-ui/Drawer';
-import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
-import FontIcon from 'material-ui/FontIcon';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import Toggle from 'material-ui/Toggle';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Toggle from '@material-ui/core/Toggle';
 import { createStructuredSelector } from 'reselect';
 import * as appActions from '../../containers/App/actions';
 import { makeSelectGlobal } from '../../containers/App/selectors';
@@ -39,8 +40,10 @@ class Settings extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.location.pathname !== '/' &&
-    !this.state.closeSettingDrawnerOnce) {
+    if (
+      nextProps.location.pathname !== '/' &&
+      !this.state.closeSettingDrawnerOnce
+    ) {
       this.setState({
         closeSettingDrawnerOnce: true,
       });
@@ -71,10 +74,7 @@ class Settings extends React.Component {
   render() {
     const { styles } = this.props;
     return (
-      <Drawer
-        openSecondary
-        open={this.props.appStore.openSettingDrawer}
-      >
+      <Drawer openSecondary open={this.props.appStore.openSettingDrawer}>
         <AppBar
           title="Settings"
           style={styles.settingDrawer}
@@ -84,12 +84,8 @@ class Settings extends React.Component {
             </IconButton>
           }
         />
-        <h2
-          style={styles.headerItem}
-        >
-          THEME COLOR
-        </h2>
-        <RadioButtonGroup
+        <h2 style={styles.headerItem}>THEME COLOR</h2>
+        <RadioGroup
           style={styles.themeOptions}
           name="themes"
           defaultSelected="darkBlueTheme"
@@ -98,42 +94,39 @@ class Settings extends React.Component {
           }}
           onChange={this.themeChanged}
         >
-          <RadioButton
+          <Radio
             value="darkTheme"
             label="Dark Theme"
-            style={styles.radioButton}
-            labelStyle={styles.radioButtonLabel}
+            style={styles.radio}
+            labelStyle={styles.radioLabel}
           />
-          <RadioButton
+          <Radio
             value="lightTheme"
             label="Light Theme"
-            style={styles.radioButton}
-            labelStyle={styles.radioButtonLabel}
+            style={styles.radio}
+            labelStyle={styles.radioLabel}
           />
-          <RadioButton
+          <Radio
             value="blueTheme"
             label="Blue Theme"
-            style={styles.radioButton}
-            labelStyle={styles.radioButtonLabel}
+            style={styles.radio}
+            labelStyle={styles.radioLabel}
           />
-          <RadioButton
+          <Radio
             value="grayTheme"
             label="Gray Theme"
-            style={styles.radioButton}
-            labelStyle={styles.radioButtonLabel}
+            style={styles.radio}
+            labelStyle={styles.radioLabel}
           />
-          <RadioButton
+          <Radio
             value="darkBlueTheme"
             label="Dark Blue Theme"
-            style={styles.radioButton}
-            labelStyle={styles.radioButtonLabel}
+            style={styles.radio}
+            labelStyle={styles.radioLabel}
           />
-        </RadioButtonGroup>
-        <h2
-          style={styles.headerItem}
-        >
-          TABS
-        </h2>
+        </RadioGroup>
+        <h2 style={styles.headerItem}>TABS</h2>
+        {/*
         <Toggle
           labelPosition={'right'}
           style={styles.swithStyle}
@@ -142,11 +135,7 @@ class Settings extends React.Component {
           toggled={this.props.appStore.showTabs}
           onToggle={this.showTabsChanged}
         />
-        <h2
-          style={styles.headerItem}
-        >
-          OPEN VIEWS
-        </h2>
+        <h2 style={styles.headerItem}>OPEN VIEWS</h2>
         <Toggle
           labelPosition={'right'}
           style={styles.swithStyle}
@@ -155,11 +144,7 @@ class Settings extends React.Component {
           toggled={this.props.appStore.showOpenViews}
           onToggle={this.openViewsChanged}
         />
-        <h2
-          style={styles.headerItem}
-        >
-          LAYOUT
-        </h2>
+        <h2 style={styles.headerItem}>LAYOUT</h2>
         <Toggle
           labelPosition={'right'}
           style={styles.swithStyle}
@@ -168,6 +153,7 @@ class Settings extends React.Component {
           toggled={this.props.appStore.isBoxedLayout}
           onToggle={this.layoutChanged}
         />
+        */}
       </Drawer>
     );
   }
@@ -191,4 +177,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Settings);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Settings);

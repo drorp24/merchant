@@ -1,5 +1,5 @@
 import React from 'react';
-import { cyan500, cyan600, pink500, pink600, purple500, purple600, orange500, orange600 } from 'material-ui/styles/colors';
+import { cyan500, cyan600, pink500, pink600, purple500, purple600, orange500, orange600 } from '@material-ui/core/colors';
 import InfoBox from '../../components/dashboard/InfoBox';
 import NewOrders from '../../components/dashboard/NewOrders';
 import MonthlySales from '../../components/dashboard/MonthlySales';

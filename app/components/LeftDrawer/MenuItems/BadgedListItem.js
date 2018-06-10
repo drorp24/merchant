@@ -1,7 +1,7 @@
 import React from 'react';
-import { withStyles } from 'material-ui/styles';
-import { ListItem } from 'material-ui/List';
-import Badge from 'material-ui/Badge';
+import { withStyles } from '@material-ui/core/styles';
+import { ListItem } from '@material-ui/core/List';
+import Badge from '@material-ui/core/Badge';
 
 const styles = {
   colorPrimary: {

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
-import Checkbox from 'material-ui/Checkbox';
+import Paper from '@material-ui/core/Paper';
+import TextField from '@material-ui/core/TextField';
+import Checkbox from '@material-ui/core/Checkbox';
 import { Link } from 'react-router';
-import RaisedButton from 'material-ui/RaisedButton';
-import FlatButton from 'material-ui/FlatButton';
-import FontIcon from 'material-ui/FontIcon';
+import RaisedButton from '@material-ui/core/RaisedButton';
+import FlatButton from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
 import styles from '../styles';
 
 class Login extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function

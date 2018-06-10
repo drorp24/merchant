@@ -1,4 +1,4 @@
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import getMuiTheme from '@material-ui/core/styles/getMuiTheme';
 
 const themeLight = getMuiTheme({
   palette: {

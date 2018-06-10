@@ -11,10 +11,10 @@ import {
   CardText,
   CardMedia,
   CardTitle,
-} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
-import Toggle from 'material-ui/Toggle';
-import { blue600, white, red400 } from 'material-ui/styles/colors';
+} from '@material-ui/core/Card';
+import FlatButton from '@material-ui/core/Button';
+import Toggle from '@material-ui/core/Toggle';
+import { blue600, white, red400 } from '@material-ui/core/colors';
 import PageBase from '../../../components/PageBase';
 
 const styles = {

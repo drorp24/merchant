@@ -1,5 +1,11 @@
-import typography from 'material-ui/styles/typography';
-import { white, lightBlue900, blue600, blueGrey900, blueGrey800 } from 'material-ui/styles/colors';
+import typography from '@material-ui/core/Typography';
+import {
+  white,
+  lightBlue900,
+  blue600,
+  blueGrey900,
+  blueGrey800,
+} from '@material-ui/core/colors';
 
 const themes = {
   darkTheme: {

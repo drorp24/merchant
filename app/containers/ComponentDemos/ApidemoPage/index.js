@@ -14,21 +14,21 @@ import {
   CardActions,
   CardHeader,
   CardText,
-} from 'material-ui/Card';
+} from '@material-ui/core/Card';
 import {
   Table,
   TableBody,
   TableRow,
   TableRowColumn,
-} from 'material-ui/Table';
-import FlatButton from 'material-ui/FlatButton';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import FontIcon from 'material-ui/FontIcon';
-import { white, lightBlue600, pink500 } from 'material-ui/styles/colors';
-import Dialog from 'material-ui/Dialog';
-import TextField from 'material-ui/TextField';
-import Divider from 'material-ui/Divider';
-import Snackbar from 'material-ui/Snackbar';
+} from '@material-ui/core/Table';
+import FlatButton from '@material-ui/core/Button';
+import FloatingActionButton from '@material-ui/core/FloatingActionButton';
+import Icon from '@material-ui/core/Icon';
+import { white, lightBlue600, pink500 } from '@material-ui/core/colors';
+import Dialog from '@material-ui/core/Dialog';
+import TextField from '@material-ui/core/TextField';
+import Divider from '@material-ui/core/Divider';
+import Snackbar from '@material-ui/core/Snackbar';
 import * as apidemoActions from './actions';
 import makeSelectApidemoPage from './selectors';
 import { makeSelectGlobal } from '../../../containers/App/selectors';

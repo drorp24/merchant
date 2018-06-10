@@ -1,5 +1,5 @@
-import spacing from 'material-ui/styles/spacing';
-import typography from 'material-ui/styles/typography';
+import spacing from '@material-ui/core/styles/spacing';
+import typography from '@material-ui/core/Typography';
 
 const styles = (currentTheme) => ({
   logo: {

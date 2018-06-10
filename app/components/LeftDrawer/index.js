@@ -2,17 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Drawer from 'material-ui/Drawer';
+import Drawer from '@material-ui/core/Drawer';
 import { browserHistory } from 'react-router';
 import { createStructuredSelector } from 'reselect';
-import Avatar from 'material-ui/Avatar';
+import Avatar from '@material-ui/core/Avatar';
 import * as appActions from '../../containers/App/actions';
 import { makeSelectGlobal } from '../../containers/App/selectors';
 import Theme from '../../config/theme';
 import Styles from './styles';
 import OpenViewsItems from './OpenViewItems';
 import MenuItems from './MenuItems';
-import { findMenuItem, scrollToOpenViewsItem, scrollToMenuItem } from './menuUtils';
+import {
+  findMenuItem,
+  scrollToOpenViewsItem,
+  scrollToMenuItem,
+} from './menuUtils';
 
 const theme = new Theme();
 
@@ -36,7 +40,10 @@ class LeftDrawer extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (newProps.appStore.menus.length > 0 && newProps.appStore.menus.length !== this.props.appStore.menus.length) {
+    if (
+      newProps.appStore.menus.length > 0 &&
+      newProps.appStore.menus.length !== this.props.appStore.menus.length
+    ) {
       this.initialMenuItem(newProps.appStore.menus);
     }
 
@@ -91,7 +98,11 @@ class LeftDrawer extends React.Component {
     if (menuItem && menuItem.url) {
       browserHistory.push(menuItem.url);
 
-      const { foundMenuItem } = findMenuItem(this.props.appStore.openViews, 'url', menuItem.url);
+      const { foundMenuItem } = findMenuItem(
+        this.props.appStore.openViews,
+        'url',
+        menuItem.url
+      );
       if (!foundMenuItem) {
         this.props.actions.openView(menuItem);
       }
@@ -107,8 +118,10 @@ class LeftDrawer extends React.Component {
   animateRootMenu(menu, child) {
     let className = ' hide';
 
-    if ((menu.open && child.animatingRootMenu && !menu.willCloseRootMenu) ||
-    child.animatingRootMenu === undefined) {
+    if (
+      (menu.open && child.animatingRootMenu && !menu.willCloseRootMenu) ||
+      child.animatingRootMenu === undefined
+    ) {
       className = '';
     }
     return className;
@@ -125,9 +138,7 @@ class LeftDrawer extends React.Component {
         docked
         open={navDrawerOpen}
       >
-        <div style={styles.logo}>
-          {this.props.appStore.user.shopName}
-        </div>
+        <div style={styles.logo}>{this.props.appStore.user.shopName}</div>
         <div style={styles.avatar.div}>
           <Avatar
             src={this.props.appStore.user.imgUrl}
@@ -138,23 +149,20 @@ class LeftDrawer extends React.Component {
             {this.props.appStore.user.name}
           </span>
         </div>
-        {
-          this.props.appStore.showOpenViews ? (
-            <OpenViewsItems
-              styles={styles}
-              isMobileBrowser={this.props.isMobileBrowser}
-              handleClickMenu={this.handleClickOpenView}
-              animateRootMenu={this.animateRootMenu}
-            >
-            </OpenViewsItems>
-          ) : null
-        }
+        {this.props.appStore.showOpenViews ? (
+          <OpenViewsItems
+            styles={styles}
+            isMobileBrowser={this.props.isMobileBrowser}
+            handleClickMenu={this.handleClickOpenView}
+            animateRootMenu={this.animateRootMenu}
+          />
+        ) : null}
         <MenuItems
           styles={styles}
           isMobileBrowser={this.props.isMobileBrowser}
           animateRootMenu={this.animateRootMenu}
           handleClickMenu={this.handleClickMenu}
-        ></MenuItems>
+        />
       </Drawer>
     );
   }
@@ -178,4 +186,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LeftDrawer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LeftDrawer);

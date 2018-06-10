@@ -1,53 +1,53 @@
 import React from 'react';
-import FontIcon from 'material-ui/FontIcon';
-import { orange600, cyan600, purple600 } from 'material-ui/styles/colors';
+import Icon from '@material-ui/core/Icon';
+import { orange600, cyan600, purple600 } from '@material-ui/core/colors';
 
 const data = {
   menus: [
     {
       id: 'dashboard',
       text: 'Dashboard',
-      icon: <FontIcon className="material-icons">assessment</FontIcon>,
+      icon: <Icon className="material-icons">assessment</Icon>,
       url: '/',
       index: 0,
     },
     {
       id: 'dashboard',
       text: 'Customers',
-      icon: <FontIcon className="material-icons">face</FontIcon>,
+      icon: <Icon className="material-icons">face</Icon>,
       url: '/',
       index: 1,
     },
     {
       id: 'dashboard',
       text: 'Orders',
-      icon: <FontIcon className="material-icons">assignment</FontIcon>,
+      icon: <Icon className="material-icons">assignment</Icon>,
       url: '/',
       index: 2,
     },
     {
       id: 'dashboard',
       text: 'Liquidity',
-      icon: <FontIcon className="material-icons">local_atm</FontIcon>,
+      icon: <Icon className="material-icons">local_atm</Icon>,
       url: '/',
       index: 3,
     },
     {
       id: 'dashboard',
       text: 'Settings',
-      icon: <FontIcon className="material-icons">settings</FontIcon>,
+      icon: <Icon className="material-icons">settings</Icon>,
       url: '/',
       index: 4,
     },
 
     /*
-    { id: 'api-demo-page', text: 'API Demo', icon: <FontIcon className="material-icons">http</FontIcon>, url: '/apiDemo', index: 1 },
-    { id: 'grid-system-page', text: 'Grid System', icon: <FontIcon className="material-icons">view_quilt</FontIcon>, url: '/gridSystem', index: 2 },
-    { id: 'icons-page', text: 'Icons', icon: <FontIcon className="material-icons">adjust</FontIcon>, url: '/icons', index: 3 },
-    { id: 'image-gallery-page', text: 'Image Gallery', icon: <FontIcon className="material-icons">collections</FontIcon>, url: '/imageGallery', index: 4 },
+    { id: 'api-demo-page', text: 'API Demo', icon: <Icon className="material-icons">http</Icon>, url: '/apiDemo', index: 1 },
+    { id: 'grid-system-page', text: 'Grid System', icon: <Icon className="material-icons">view_quilt</Icon>, url: '/gridSystem', index: 2 },
+    { id: 'icons-page', text: 'Icons', icon: <Icon className="material-icons">adjust</Icon>, url: '/icons', index: 3 },
+    { id: 'image-gallery-page', text: 'Image Gallery', icon: <Icon className="material-icons">collections</Icon>, url: '/imageGallery', index: 4 },
     { id: 'form-elements-page',
       text: 'Form Elements',
-      icon: <FontIcon className="material-icons">web</FontIcon>,
+      icon: <Icon className="material-icons">web</Icon>,
       children: [
         { id: 'auto-complete-page', text: 'Auto Complete', url: '/autoComplete', index: 5 },
         { id: 'buttons-page', text: 'Buttons', url: '/buttons', index: 6 },
@@ -60,18 +60,18 @@ const data = {
     },
     { id: 'chart-page',
       text: 'Charts',
-      icon: <FontIcon className="material-icons">show_chart</FontIcon>,
+      icon: <Icon className="material-icons">show_chart</Icon>,
       children: [
         { id: 'barchart-page', text: 'BarChart Page', url: '/barChart', index: 12 },
         { id: 'linechart-page', text: 'LineChart Page', url: '/lineChart', index: 13 },
         { id: 'piechart-page', text: 'PieChart Page', url: '/pieChart', index: 14 },
       ],
     },
-    { id: 'dialog-page', text: 'Dialog', icon: <FontIcon className="material-icons">call_to_action</FontIcon>, url: '/dialog', index: 15 },
-    { id: 'card-page', text: 'Card', icon: <FontIcon className="material-icons">note</FontIcon>, url: '/card', index: 16 },
-    { id: 'form-page', text: 'Form Page', icon: <FontIcon className="material-icons">web_asset</FontIcon>, url: '/form', index: 17 },
-    { id: 'table-page', text: 'Table Page', icon: <FontIcon className="material-icons">grid_on</FontIcon>, url: '/table', index: 18 },
-    { id: 'public-page', text: 'Public Page', icon: <FontIcon className="material-icons">language</FontIcon>, url: '/public-page', index: 19 },
+    { id: 'dialog-page', text: 'Dialog', icon: <Icon className="material-icons">call_to_action</Icon>, url: '/dialog', index: 15 },
+    { id: 'card-page', text: 'Card', icon: <Icon className="material-icons">note</Icon>, url: '/card', index: 16 },
+    { id: 'form-page', text: 'Form Page', icon: <Icon className="material-icons">web_asset</Icon>, url: '/form', index: 17 },
+    { id: 'table-page', text: 'Table Page', icon: <Icon className="material-icons">grid_on</Icon>, url: '/table', index: 18 },
+    { id: 'public-page', text: 'Public Page', icon: <Icon className="material-icons">language</Icon>, url: '/public-page', index: 19 },
 */
   ],
   tablePage: {
@@ -174,19 +174,19 @@ const data = {
         name: 'Bitcoin',
         value: 1200,
         color: orange600,
-        icon: <FontIcon className="material-icons">chevron_right</FontIcon>,
+        icon: <Icon className="material-icons">chevron_right</Icon>,
       },
       {
         name: 'Ethereum',
         value: 700,
         color: purple600,
-        icon: <FontIcon className="material-icons">chevron_right</FontIcon>,
+        icon: <Icon className="material-icons">chevron_right</Icon>,
       },
       {
         name: 'Litecoin',
         value: 150,
         color: cyan600,
-        icon: <FontIcon className="material-icons">chevron_right</FontIcon>,
+        icon: <Icon className="material-icons">chevron_right</Icon>,
       },
     ],
   },

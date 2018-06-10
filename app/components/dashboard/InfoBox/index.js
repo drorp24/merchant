@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Paper from 'material-ui/Paper';
-import FontIcon from 'material-ui/FontIcon';
-import { white } from 'material-ui/styles/colors';
-import typography from 'material-ui/styles/typography';
+import Paper from '@material-ui/core/Paper';
+import Icon from '@material-ui/core/Icon';
+import { white } from '@material-ui/core/colors';
+import typography from '@material-ui/core/Typography';
 
 class InfoBox extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {

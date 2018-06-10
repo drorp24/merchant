@@ -4,7 +4,7 @@
 */
 
 import React from 'react';
-import TimePicker from 'material-ui/TimePicker';
+import TimePicker from '@material-ui/core/TimePicker';
 import PageBase from '../../../../components/PageBase';
 
 const styles = {

@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List, makeSelectable } from 'material-ui/List';
+import { List, makeSelectable } from '@material-ui/core/List';
 
 function wrapState(ComposedComponent) {
   return class SelectableList extends React.Component {

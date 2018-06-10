@@ -4,8 +4,8 @@
 */
 
 import React from 'react';
-import Divider from 'material-ui/Divider';
-import TextField from 'material-ui/TextField';
+import Divider from '@material-ui/core/Divider';
+import TextField from '@material-ui/core/TextField';
 import PageBase from '../../../../components/PageBase';
 
 const styles = {

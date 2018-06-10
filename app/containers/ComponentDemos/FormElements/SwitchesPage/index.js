@@ -6,11 +6,12 @@
 */
 
 import React from 'react';
-import Checkbox from 'material-ui/Checkbox';
-import FontIcon from 'material-ui/FontIcon';
-import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import Toggle from 'material-ui/Toggle';
-import Divider from 'material-ui/Divider';
+import Checkbox from '@material-ui/core/Checkbox';
+import Icon from '@material-ui/core/Icon';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Toggle from '@material-ui/core/Toggle';
+import Divider from '@material-ui/core/Divider';
 import PageBase from '../../../../components/PageBase';
 
 const styles = {
@@ -56,19 +57,24 @@ function SwitchesPage() {
           <h3>Checkbox</h3>
           <Divider />
           <div style={styles.block}>
+            <Checkbox label="Simple" style={styles.checkbox} />
             <Checkbox
-              label="Simple"
-              style={styles.checkbox}
-            />
-            <Checkbox
-              checkedIcon={<FontIcon className="material-icons">favorite</FontIcon>}
-              uncheckedIcon={<FontIcon className="material-icons">favorite_border</FontIcon>}
+              checkedIcon={
+                <FontIcon className="material-icons">favorite</FontIcon>
+              }
+              uncheckedIcon={
+                <FontIcon className="material-icons">favorite_border</FontIcon>
+              }
               label="Custom icon"
               style={styles.checkbox}
             />
             <Checkbox
-              checkedIcon={<FontIcon className="material-icons">visibility</FontIcon>}
-              uncheckedIcon={<FontIcon className="material-icons">visibility_off</FontIcon>}
+              checkedIcon={
+                <FontIcon className="material-icons">visibility</FontIcon>
+              }
+              uncheckedIcon={
+                <FontIcon className="material-icons">visibility_off</FontIcon>
+              }
               label="Custom icon of different shapes"
               style={styles.checkbox}
             />
@@ -108,8 +114,14 @@ function SwitchesPage() {
               <RadioButton
                 value="ludicrous"
                 label="Custom icon"
-                checkedIcon={<FontIcon className="material-icons">favorite</FontIcon>}
-                uncheckedIcon={<FontIcon className="material-icons">favorite_border</FontIcon>}
+                checkedIcon={
+                  <FontIcon className="material-icons">favorite</FontIcon>
+                }
+                uncheckedIcon={
+                  <FontIcon className="material-icons">
+                    favorite_border
+                  </FontIcon>
+                }
                 style={styles.radioButton}
               />
             </RadioButtonGroup>
@@ -127,7 +139,11 @@ function SwitchesPage() {
                 style={styles.radioButton}
               />
             </RadioButtonGroup>
-            <RadioButtonGroup name="notRight" labelPosition="left" style={styles.block}>
+            <RadioButtonGroup
+              name="notRight"
+              labelPosition="left"
+              style={styles.block}
+            >
               <RadioButton
                 value="reverse"
                 label="Label on the left"
@@ -142,20 +158,13 @@ function SwitchesPage() {
           <h3>Toggle</h3>
           <Divider />
           <div style={styles.block}>
-            <Toggle
-              label="Simple"
-              style={styles.toggle}
-            />
+            <Toggle label="Simple" style={styles.toggle} />
             <Toggle
               label="Toggled by default"
               defaultToggled
               style={styles.toggle}
             />
-            <Toggle
-              label="Disabled"
-              disabled
-              style={styles.toggle}
-            />
+            <Toggle label="Disabled" disabled style={styles.toggle} />
             <Toggle
               label="Label on the right"
               labelPosition="right"
