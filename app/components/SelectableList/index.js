@@ -6,7 +6,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { List } from '@material-ui/core/List';
+import { List, makeSelectable } from '@material-ui/core/List';
 
 function wrapState(ComposedComponent) {
   return class SelectableList extends React.Component {
@@ -55,4 +55,4 @@ function wrapState(ComposedComponent) {
   };
 }
 
-export default wrapState(List);
+export default wrapState(makeSelectable(List));
