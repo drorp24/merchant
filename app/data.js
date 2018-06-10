@@ -1,6 +1,6 @@
 import React from 'react';
 import FontIcon from 'material-ui/FontIcon';
-import { orange600, cyan600, purple600 } from 'material-ui/styles/colors';
+import { orange600, cyan600, blueGrey600 } from 'material-ui/styles/colors';
 
 const data = {
   menus: [
@@ -130,27 +130,27 @@ const data = {
     recentProducts: [
       {
         id: 1,
-        title: 'Samsung Galaxy S7',
-        text:
-          'Samsung Galaxy S7 G930F 32GB Factory Unlocked GSM Smartphone International Version (Gold)',
+        title: 'Bought 0.75 BTC',
+        text: 'Just now',
+        avatar: 'https://randomuser.me//api//portraits//women//8.jpg',
       },
       {
         id: 2,
-        title: 'Sony Xperia XZ',
-        text:
-          'Sony Xperia XZ - Unlocked Smartphone - 32GB - Platinum (US Warranty)',
+        title: 'Sold 2.7 ETH',
+        text: '3 minutes ago',
+        avatar: 'https://randomuser.me//api//portraits//men//5.jpg',
       },
       {
         id: 3,
-        title: 'ACER R240HY 23.8-Inch',
-        text:
-          'Acer R240HY bidx 23.8-Inch IPS HDMI DVI VGA (1920 x 1080) Widescreen Monitor',
+        title: 'Bought 2,000 XRP',
+        text: '7 minutes ago',
+        avatar: 'https://randomuser.me//api//portraits//women//2.jpg',
       },
       {
         id: 4,
-        title: 'Dell 15.6-Inch Gaming Laptop',
-        text:
-          'Dell 15.6-Inch Gaming Laptop (6th Gen Intel Quad-Core i5-6300HQ Processor up to 3.2GHz, 8GB DDR3, 256GB SSD, Nvidia GeForce GTX 960M, Windows 10)',
+        title: 'Sold 1.7 ETH',
+        text: 'Half an hour ago',
+        avatar: 'https://randomuser.me//api//portraits//men//8.jpg',
       },
     ],
     monthlySales: [
@@ -179,7 +179,7 @@ const data = {
       {
         name: 'Ethereum',
         value: 700,
-        color: purple600,
+        color: blueGrey600,
         icon: <FontIcon className="material-icons">chevron_right</FontIcon>,
       },
       {

@@ -23,11 +23,10 @@ const RecentlyProducts = (props) => {
   };
 
   const iconButtonElement = (
-    <IconButton
-      touch
-      tooltipPosition="bottom-left"
-    >
-      <FontIcon color={grey400} className="material-icons">more_vert_icon</FontIcon>
+    <IconButton touch tooltipPosition="bottom-left">
+      <FontIcon color={grey400} className="material-icons">
+        more_vert_icon
+      </FontIcon>
     </IconButton>
   );
 
@@ -41,22 +40,17 @@ const RecentlyProducts = (props) => {
     <Paper>
       <List>
         <Subheader style={styles.subheader}>Recent Deals</Subheader>
-        {props.data.map((item) =>
+        {props.data.map((item) => (
           <div key={item.title}>
             <ListItem
-              leftAvatar={
-                <Avatar
-                  icon={
-                    <FontIcon className="material-icons">image</FontIcon>
-                  }
-                />}
+              leftAvatar={<Avatar src={item.avatar} />}
               primaryText={item.title}
               secondaryText={item.text}
               rightIconButton={rightIconMenu}
             />
             <Divider inset />
           </div>
-        )}
+        ))}
       </List>
     </Paper>
   );

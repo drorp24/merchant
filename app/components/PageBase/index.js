@@ -22,26 +22,29 @@ class PageBase extends React.Component {
   }
 
   render() {
-    const { title, navigation, noWrapContent, children, minHeight } = this.props;
+    const {
+      title,
+      navigation,
+      noWrapContent,
+      children,
+      minHeight,
+    } = this.props;
 
     const content = (
       <div style={{ minHeight: minHeight || 500, height: '100%' }}>
-        {
-          this.state.loading ? (
-            <div style={{ position: 'relative' }}>
-              <RefreshIndicator
-                size={40}
-                left={-20}
-                top={200}
-                status={'loading'}
-                style={{ marginLeft: '50%' }}
-              />
-            </div>
-          ) :
-            <div>
-              { children }
-            </div>
-        }
+        {this.state.loading ? (
+          <div style={{ position: 'relative' }}>
+            <RefreshIndicator
+              size={40}
+              left={-20}
+              top={200}
+              status={'loading'}
+              style={{ marginLeft: '50%' }}
+            />
+          </div>
+        ) : (
+          <div>{children}</div>
+        )}
       </div>
     );
 
@@ -49,23 +52,28 @@ class PageBase extends React.Component {
       <div>
         <span style={globalStyles.navigation}>{navigation}</span>
 
-        { noWrapContent ? (
-          <div>
-            { content }
-          </div>
+        {noWrapContent ? (
+          <div>{content}</div>
         ) : (
           <Paper style={globalStyles.paper}>
             <h3 style={globalStyles.title}>{title}</h3>
 
             <Divider />
 
-            { content }
+            {content}
 
             <div style={globalStyles.clear} />
-
           </Paper>
         )}
-        <p>Powered by Crymbo</p>
+        <p
+          style={{
+            fontSize: '1.2em',
+            fontStyle: 'italic',
+            marginTop: '-0.4em',
+          }}
+        >
+          Powered by Crymbo
+        </p>
       </div>
     );
   }

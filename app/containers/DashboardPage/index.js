@@ -1,5 +1,5 @@
 import React from 'react';
-import { cyan500, cyan600, pink500, pink600, purple500, purple600, orange500, orange600 } from 'material-ui/styles/colors';
+import { cyan500, cyan600, pink500, pink600, blueGrey500, blueGrey600, orange500, orange600 } from 'material-ui/styles/colors';
 import InfoBox from '../../components/dashboard/InfoBox';
 import NewOrders from '../../components/dashboard/NewOrders';
 import MonthlySales from '../../components/dashboard/MonthlySales';
@@ -64,8 +64,8 @@ class DashboardPage extends React.Component {
           <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3 m-b-15 ">
             <InfoBox
               Icon={'assessment'}
-              color={purple600}
-              iconColor={purple500}
+              color={blueGrey600}
+              iconColor={blueGrey500}
               title="Sales"
               value="852"
             />
